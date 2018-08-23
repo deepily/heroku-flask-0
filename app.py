@@ -17,7 +17,8 @@ def homepage():
 
 if __name__ == '__main__':
 
-    env_port = os.getenv( key='PORT', default="8888" )
+    # From: https://stackoverflow.com/questions/4906977/how-do-i-access-environment-variables-from-python
+    env_port = int( os.getenv( key='PORT', default=8888 ) )
     print( env_port )
     app.run( port=env_port )
 
