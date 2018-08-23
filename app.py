@@ -1,6 +1,7 @@
 from flask import Flask
 from datetime import datetime
 
+is_local = True
 port = 8888
 app = Flask(__name__)
 
@@ -17,5 +18,8 @@ def homepage():
 
 if __name__ == '__main__':
     #app.run(debug=True, use_reloader=True)
-    app.run( port=port )
+    if is_local:
+        app.run( port=port )
+    else:
+        app.run()
 
