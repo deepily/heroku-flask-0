@@ -2,7 +2,7 @@ import flask
 print( flask.__version__ )
 
 import requests
-#import json
+print( requests.__version__ )
 
 doggie_url = "https://dog.ceo/api/breeds/image/random"
 
