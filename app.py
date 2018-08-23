@@ -1,8 +1,7 @@
 from flask import Flask
 from datetime import datetime
+import os
 
-is_local = False
-port = 8888
 app = Flask(__name__)
 
 @app.route('/')
@@ -17,9 +16,9 @@ def homepage():
     """.format(time=the_time)
 
 if __name__ == '__main__':
-    #app.run(debug=True, use_reloader=True)
-    if is_local:
-        app.run( port=port )
-    else:
-        app.run()
+
+    env_port = os.getenv( key='PORT', default="8888" )
+    print( env_port )
+    app.run( port=env_port )
+
 
