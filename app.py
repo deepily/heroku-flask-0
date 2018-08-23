@@ -1,7 +1,7 @@
 from flask import Flask
 from datetime import datetime
 
-is_local = True
+is_local = False
 port = 8888
 app = Flask(__name__)
 
